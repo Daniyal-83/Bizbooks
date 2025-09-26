@@ -1,0 +1,16 @@
+.partners { padding: 80px 40px; background: #fff; text-align: center; }
+.section-title { font-size: 32px; margin-bottom: 28px; color: #2c2c2c; }
+.partners-row { display: grid; grid-template-columns: repeat(5,1fr); gap: 24px; max-width: 1200px; margin: 0 auto; align-items: center; }
+.partner-badge { padding: 16px; border: 1px solid #eaeaea; border-radius: 10px; background: #f9f9f9; color: #2c2c2c; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+
+@media (max-width: 1024px) {
+  .partners-row { grid-template-columns: repeat(3,1fr); }
+}
+
+@media (max-width: 768px) {
+  .partners { padding: 60px 20px; }
+  .partners-row { grid-template-columns: repeat(2,1fr); }
+  .section-title { font-size: 24px; }
+}
+
+

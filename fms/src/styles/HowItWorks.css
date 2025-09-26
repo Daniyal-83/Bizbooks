@@ -1,0 +1,19 @@
+.hiw { padding: 80px 40px; background: #fafafa; text-align: center; }
+.section-title { font-size: 32px; margin-bottom: 28px; color: #2c2c2c; }
+.hiw-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+.hiw-card { background: #fff; border-radius: 10px; padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+.hiw-num { width: 36px; height: 36px; border-radius: 50%; background: #2ca01c; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 10px; }
+.hiw-title { font-weight: 700; margin-bottom: 6px; color: #2ca01c; }
+.hiw-desc { color: #555; font-size: 14px; }
+
+@media (max-width: 1024px) {
+  .hiw-steps { grid-template-columns: repeat(2,1fr); }
+}
+
+@media (max-width: 768px) {
+  .hiw { padding: 60px 20px; }
+  .hiw-steps { grid-template-columns: 1fr; }
+  .section-title { font-size: 24px; }
+}
+
+

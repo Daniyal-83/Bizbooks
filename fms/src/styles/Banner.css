@@ -1,0 +1,23 @@
+.top-banner {
+  background-color: #87af82; /* QuickBooks green */
+  color: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.top-banner p {
+  margin: 0;
+}
+
+.top-banner a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.top-banner a:hover {
+  color: #000;
+}
