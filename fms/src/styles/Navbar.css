@@ -7,6 +7,9 @@
   color: #fff;
   box-shadow: 0 2px 8px rgba(44,160,28,0.08);
   font-family: 'Segoe UI', Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-logo {

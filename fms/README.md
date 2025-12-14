@@ -68,3 +68,44 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Environment Setup
+
+Backend (`fms_backend`) required env variables:
+
+- `PORT` (default 5000)
+- `MONGO_URI` (MongoDB connection string)
+- `JWT_SECRET` (any strong secret)
+- `FRONTEND_URL` (e.g., http://localhost:3000)
+- `BACKEND_URL` (e.g., http://localhost:5000)
+
+**AI Extraction (LlamaIndex Cloud Extract API):**
+
+The system uses **LlamaIndex Cloud Extract API** for enterprise-grade structured data extraction from financial documents.
+
+**Required:**
+- `LLAMA_CLOUD_API_KEY` - Get your API key from https://cloud.llamaindex.ai
+
+**Optional:**
+- `LLAMA_EXTRACTION_AGENT_NAME` - Custom agent name (default: `fms_financial_extractor`)
+- `LLAMA_PROJECT_ID` - Project ID for organization projects
+
+**How it works:**
+1. Uploaded documents are sent to LlamaIndex Cloud for processing
+2. The system automatically creates/uses an extraction agent with a financial document schema
+3. Structured data (tables, fields, categories) is extracted and saved to the database
+4. Results appear in the dashboard organized by category
+
+**Fallback:**
+If LlamaIndex Cloud is not configured or fails, the system falls back to heuristic (rule-based) extraction.
+
+**Documentation:**
+- LlamaIndex Cloud Extract API: https://developers.llamaindex.ai/python/cloud/llamaextract/getting_started/api/
+
+Frontend (`fms`) env variables:
+
+- `REACT_APP_API_URL` (default http://localhost:5000/api)
+
+**Dependencies:**
+- LibreOffice must be installed and accessible on the backend host for PDF conversion and text extraction.
+- For Ollama: Install from https://ollama.ai and run `ollama serve` before starting the backend.

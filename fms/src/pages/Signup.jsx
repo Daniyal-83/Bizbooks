@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { registerUser } from "../services/api";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   const [form, setForm] = useState({
@@ -71,6 +72,10 @@ export default function Signup() {
         Sign Up
       </button>
       <p>{message}</p>
+      <div style={{ marginTop: "10px", textAlign: "center" }}>
+        <span>Already have an account? </span>
+        <Link to="/login">Login</Link>
+      </div>
     </form>
   );
 }

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { loginUser } from "../services/api";
 import "../styles/Login.css";
+import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [form, setForm] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
 
@@ -21,8 +23,9 @@ export default function Login() {
     try {
       const res = await loginUser(form);
       setMessage("✅ Login Successful");
-      console.log(res.data);
-      navigate("/profile", { replace: true });
+      // Simulate user data, you may replace with res.data
+      login({ id: res.data?.id || 1, name: res.data?.name || form.email }, "user");
+      navigate("/dashboard", { replace: true });
     } catch (err) {
       const msg = err?.response?.data?.message || err.message;
       setMessage("❌ Error: " + msg);
@@ -54,6 +57,7 @@ export default function Login() {
         style={{ display: "block", margin: "10px 0", padding: "8px", width: "100%" }}
         autoComplete="new-password"
       />
+      {message && <div style={{ margin: "10px 0", color: message.startsWith("✅") ? "green" : "red" }}>{message}</div>}
       <button
         type="submit"
         className="auth-button"
@@ -69,8 +73,7 @@ export default function Login() {
       >
         Login
       </button>
-      {message && <div className="auth-message">{message}</div>}
-      <div style={{ marginTop: "12px", textAlign: "center" }}>
+      <div style={{ marginTop: "10px", textAlign: "center" }}>
         <span>Not have an account? </span>
         <Link to="/signup">Signup</Link>
       </div>

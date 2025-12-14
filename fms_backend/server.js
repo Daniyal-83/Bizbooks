@@ -10,14 +10,19 @@ const connectDB = require('./config/db');
 
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
+const fileRoutes = require('./routes/fileRoutes');
 
 const app = express();
 
 // connect DB
 connectDB();
 
-// Middlewares
-app.use(helmet());
+
+app.use(helmet({
+  frameguard: false,
+  contentSecurityPolicy: false,
+  crossOriginEmbedderPolicy: false,
+}));
 app.use(express.json());
 app.use(cookieParser());
 if (process.env.NODE_ENV !== 'production') {
@@ -33,6 +38,11 @@ app.use(cors({
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/files', fileRoutes);
+
+// Serve uploaded files
+const path = require('path');
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // 404 for unknown API routes
 app.use((req, res, next) => {

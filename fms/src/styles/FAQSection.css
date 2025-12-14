@@ -1,0 +1,24 @@
+.faq-section {
+  margin: 40px auto;
+  max-width: 700px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px #eee;
+  padding: 32px 24px;
+}
+.faq-section h2 {
+  text-align: center;
+  color: #2ca01c;
+  margin-bottom: 24px;
+}
+.faq-item {
+  margin-bottom: 18px;
+}
+.faq-question {
+  font-weight: bold;
+  color: #333;
+}
+.faq-answer {
+  color: #555;
+  margin-top: 4px;
+}

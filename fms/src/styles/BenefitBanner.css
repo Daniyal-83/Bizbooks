@@ -1,0 +1,17 @@
+.benefit-banner {
+  background: #2ca01c;
+  color: white;
+  padding: 32px 0;
+  text-align: center;
+  border-radius: 8px;
+  margin: 32px 0;
+}
+.benefit-banner h2 {
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+.benefit-banner p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}

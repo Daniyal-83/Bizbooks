@@ -1,0 +1,32 @@
+.feature-list {
+  margin: 32px 0;
+}
+.feature-list h2 {
+  text-align: center;
+  color: #2ca01c;
+  margin-bottom: 24px;
+}
+.feature-list-cards {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.feature-list-card {
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 24px;
+  min-width: 220px;
+  box-shadow: 0 2px 8px #eee;
+  transition: box-shadow 0.2s;
+}
+.feature-list-card:hover {
+  box-shadow: 0 4px 16px #ccc;
+}
+.feature-list-card h3 {
+  margin-bottom: 8px;
+  color: #333;
+}
+.feature-list-card p {
+  color: #555;
+}

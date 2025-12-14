@@ -4,7 +4,7 @@ export default function PricingSection() {
   const plans = [
     {
       name: "Starter",
-      price: "$9.99/mo",
+      price: "$0/mo",
       features: ["Track expenses", "Send invoices", "Basic reports"],
       button: "Start Free Trial",
     },
@@ -16,7 +16,7 @@ export default function PricingSection() {
         "Advanced reports",
         "Team collaboration",
       ],
-      button: "Start Free Trial",
+      button: "Select Plan",
     },
     {
       name: "Enterprise",

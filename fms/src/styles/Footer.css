@@ -1,5 +1,5 @@
 .footer {
-  background: #111;
+  background: #2f7526 ;
   color: #ddd;
   padding: 50px 20px 20px;
   font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@
 .footer-logo {
   font-size: 24px;
   font-weight: bold;
-  color: #2ca01c; /* QuickBooks green */
+  color: #ffffff; /* QuickBooks green */
   margin-bottom: 15px;
 }
 
