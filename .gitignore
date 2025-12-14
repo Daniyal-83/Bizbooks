@@ -1,2 +1,3 @@
 /fms/node_modules/
 /fms_backend/node_modules/
+.env
